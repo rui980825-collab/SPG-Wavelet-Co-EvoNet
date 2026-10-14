@@ -1,0 +1,273 @@
+scenes:
+- sea
+- lake
+- bridge
+- city road
+- country road
+- playground
+- airport
+- sky
+class_to_context:
+  cyclist:
+  - sea
+  car:
+  - bridge
+  pedestrian:
+  - city road
+  - sea
+  bus:
+  - bridge
+  ship:
+  - sky
+  - sea
+  plane:
+  - airport
+  - sky
+  drone:
+  - sea
+  - airport
+  - lake
+build_args:
+  coco: data\raw\dataset\annotations_coco\instances_00_train2017.json
+  raw_root: data\raw\dataset\images
+  context_ratio: 2.5
+  min_prob: 0.12
+  topk: 3
+  max_samples_per_class: 50000
+  skip_unknown: false
+meta:
+  missing_images: 0
+  note: Rules learned from ROI-level scene heuristics on RGB train set.
+stats:
+  cyclist:
+    total_used: 163
+    kept:
+    - scene: sea
+      prob: 0.8896
+      count: 145
+    all_top8:
+    - scene: sea
+      prob: 0.8896
+      count: 145
+    - scene: city road
+      prob: 0.092
+      count: 15
+    - scene: lake
+      prob: 0.0061
+      count: 1
+    - scene: bridge
+      prob: 0.0061
+      count: 1
+    - scene: airport
+      prob: 0.0061
+      count: 1
+    - scene: country road
+      prob: 0.0
+      count: 0
+    - scene: playground
+      prob: 0.0
+      count: 0
+    - scene: sky
+      prob: 0.0
+      count: 0
+  car:
+    total_used: 7871
+    kept:
+    - scene: bridge
+      prob: 0.9952
+      count: 7833
+    all_top8:
+    - scene: bridge
+      prob: 0.9952
+      count: 7833
+    - scene: sea
+      prob: 0.003
+      count: 24
+    - scene: city road
+      prob: 0.0018
+      count: 14
+    - scene: lake
+      prob: 0.0
+      count: 0
+    - scene: country road
+      prob: 0.0
+      count: 0
+    - scene: playground
+      prob: 0.0
+      count: 0
+    - scene: airport
+      prob: 0.0
+      count: 0
+    - scene: sky
+      prob: 0.0
+      count: 0
+  pedestrian:
+    total_used: 33
+    kept:
+    - scene: city road
+      prob: 0.6061
+      count: 20
+    - scene: sea
+      prob: 0.3333
+      count: 11
+    all_top8:
+    - scene: city road
+      prob: 0.6061
+      count: 20
+    - scene: sea
+      prob: 0.3333
+      count: 11
+    - scene: playground
+      prob: 0.0303
+      count: 1
+    - scene: airport
+      prob: 0.0303
+      count: 1
+    - scene: lake
+      prob: 0.0
+      count: 0
+    - scene: bridge
+      prob: 0.0
+      count: 0
+    - scene: country road
+      prob: 0.0
+      count: 0
+    - scene: sky
+      prob: 0.0
+      count: 0
+  bus:
+    total_used: 3204
+    kept:
+    - scene: bridge
+      prob: 1.0
+      count: 3204
+    all_top8:
+    - scene: bridge
+      prob: 1.0
+      count: 3204
+    - scene: sea
+      prob: 0.0
+      count: 0
+    - scene: lake
+      prob: 0.0
+      count: 0
+    - scene: city road
+      prob: 0.0
+      count: 0
+    - scene: country road
+      prob: 0.0
+      count: 0
+    - scene: playground
+      prob: 0.0
+      count: 0
+    - scene: airport
+      prob: 0.0
+      count: 0
+    - scene: sky
+      prob: 0.0
+      count: 0
+  ship:
+    total_used: 4747
+    kept:
+    - scene: sky
+      prob: 0.5062
+      count: 2403
+    - scene: sea
+      prob: 0.4489
+      count: 2131
+    all_top8:
+    - scene: sky
+      prob: 0.5062
+      count: 2403
+    - scene: sea
+      prob: 0.4489
+      count: 2131
+    - scene: city road
+      prob: 0.0339
+      count: 161
+    - scene: bridge
+      prob: 0.0063
+      count: 30
+    - scene: lake
+      prob: 0.0044
+      count: 21
+    - scene: airport
+      prob: 0.0002
+      count: 1
+    - scene: country road
+      prob: 0.0
+      count: 0
+    - scene: playground
+      prob: 0.0
+      count: 0
+  plane:
+    total_used: 6646
+    kept:
+    - scene: airport
+      prob: 0.7024
+      count: 4668
+    - scene: sky
+      prob: 0.1902
+      count: 1264
+    all_top8:
+    - scene: airport
+      prob: 0.7024
+      count: 4668
+    - scene: sky
+      prob: 0.1902
+      count: 1264
+    - scene: sea
+      prob: 0.0662
+      count: 440
+    - scene: lake
+      prob: 0.0349
+      count: 232
+    - scene: city road
+      prob: 0.0032
+      count: 21
+    - scene: bridge
+      prob: 0.003
+      count: 20
+    - scene: country road
+      prob: 0.0002
+      count: 1
+    - scene: playground
+      prob: 0.0
+      count: 0
+  drone:
+    total_used: 2401
+    kept:
+    - scene: sea
+      prob: 0.3907
+      count: 938
+    - scene: airport
+      prob: 0.312
+      count: 749
+    - scene: lake
+      prob: 0.1895
+      count: 455
+    all_top8:
+    - scene: sea
+      prob: 0.3907
+      count: 938
+    - scene: airport
+      prob: 0.312
+      count: 749
+    - scene: lake
+      prob: 0.1895
+      count: 455
+    - scene: sky
+      prob: 0.1062
+      count: 255
+    - scene: city road
+      prob: 0.0017
+      count: 4
+    - scene: bridge
+      prob: 0.0
+      count: 0
+    - scene: country road
+      prob: 0.0
+      count: 0
+    - scene: playground
+      prob: 0.0
+      count: 0

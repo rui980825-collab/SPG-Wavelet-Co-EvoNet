@@ -1,0 +1,25 @@
+{
+  "SOURCE_AUDIT": "PASS",
+  "MANUSCRIPT_ALIGNMENT": "PARTIAL",
+  "DEPENDENCY_STATUS": "PARTIAL",
+  "LOCAL_CHECK": "PASS",
+  "SECURITY_CHECK": "PASS",
+  "PUBLICATION_READINESS": "PARTIAL",
+  "manuscript_alignment_scope": "Deferred by author; no current-manuscript consistency audit performed",
+  "source_derived_files": 72,
+  "core_python_computations_unchanged": true,
+  "semantic_threshold_revision": {
+    "parameter": "hard_prior_tau",
+    "old_value": 0.27,
+    "new_value": 0.30,
+    "updated_configs": 10,
+    "active_definitions_updated": 30,
+    "photometric_screening_unchanged": true,
+    "existing_experimental_results_recomputed": false,
+    "scope": "Independent release presets only; original research source unchanged"
+  },
+  "datasets_or_weights_bundled": false,
+  "training_or_experimental_inference_run": false,
+  "remote_repository_created_or_uploaded": false,
+  "publication_approval_required": "Author approval of redistribution rights and repository license"
+}

@@ -1,0 +1,6 @@
+-r requirements.txt
+# The surviving ATSS environment used these OpenMMLab versions.
+mmdet==3.3.0
+mmengine==0.10.7
+mmcv==2.1.0
+pycocotools

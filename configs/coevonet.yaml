@@ -1,0 +1,31 @@
+seed: 42
+device: cuda
+dataset_tag: uav_rgbir
+runs_root: runs
+
+# === Step 1 产出路径（已验证） ===
+patch_bank_root: data/patches/patch_bank
+
+# === 输入尺寸（Tiny 友好）===
+img_size: 64
+
+# === 训练策略 ===
+train_ratio: 0.9
+batch_size: 128        # RTX 5060 Laptop 稳定
+num_workers: 6         # Windows 上 4~6 最稳
+epochs: 20
+lr: 0.001
+weight_decay: 1.0e-4
+
+# === 模型 ===
+base_ch: 32
+z_ch: 256
+use_wkan: true
+
+# === 损失权重（论文一致）===
+lambda_rec: 1.0
+lambda_hsg: 0.5
+lambda_fib: 0.1
+
+# === 导出 ===
+export_recon_every: 1

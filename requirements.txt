@@ -1,0 +1,11 @@
+# Direct dependencies of the extracted sample-construction code.
+# Install a compatible PyTorch/torchvision pair for your CUDA platform first.
+# Observed versions are recorded in docs/observed_environments.json.
+torch
+torchvision
+numpy
+opencv-python
+Pillow
+PyYAML
+tqdm
+matplotlib

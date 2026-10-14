@@ -1,0 +1,58 @@
+{
+  "note": "Observed package metadata, not a claim of end-to-end reproducibility.",
+  "windows_source_metadata": {
+    ".venv": {
+      "numpy": "2.4.2",
+      "opencv-python": "4.13.0.92",
+      "pillow": "12.1.1",
+      "PyYAML": "6.0.3",
+      "torch": "2.9.1+cu128",
+      "torchvision": "0.24.1+cu128",
+      "tqdm": "4.67.3"
+    },
+    ".venv_mmdet3": {
+      "matplotlib": "3.10.8",
+      "mmcv": "2.1.0",
+      "mmdet": "3.3.0",
+      "mmengine": "0.10.7",
+      "numpy": "1.26.4",
+      "opencv-python": "4.10.0.84",
+      "pillow": "12.1.1",
+      "PyYAML": "6.0.3",
+      "torch": "2.1.0",
+      "torchvision": "0.16.0",
+      "tqdm": "4.65.2"
+    },
+    ".venv_mmdet3_cuda": {
+      "matplotlib": "3.10.8",
+      "mmdet": "3.3.0",
+      "mmengine": "0.10.7",
+      "numpy": "2.4.3",
+      "opencv-python": "4.10.0.84",
+      "pillow": "12.1.1",
+      "PyYAML": "6.0.3",
+      "torch": "2.7.0+cu128",
+      "torchvision": "0.22.0+cu128",
+      "tqdm": "4.65.2"
+    }
+  },
+  "linux_detector_environment_observed": {
+    "python": "3.11.15 (main, Mar 11 2026, 17:20:07) [GCC 14.3.0]",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "packages": {
+      "torch": "2.7.0+cu128",
+      "torchvision": "0.22.0+cu128",
+      "mmcv": "2.1.0",
+      "mmcv-lite": null,
+      "mmdet": "3.3.0",
+      "mmengine": "0.10.7",
+      "numpy": "2.4.3",
+      "pycocotools": "2.0.11",
+      "opencv-python": "4.13.0.92",
+      "Pillow": "12.1.1",
+      "PyWavelets": null,
+      "scipy": "1.17.1",
+      "PyYAML": "6.0.3"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+version: 1
+generated_at: '2026-03-18 12:37:21'
+dataset_name: uav_rgbir_00_train2017
+source_annotation: data\raw\dataset\annotations_coco\instances_00_train2017.json
+image_count: 34111
+non_empty_image_count: 32443
+empty_rate: 0.04889918208202632
+object_count_stats:
+  mean: 12.6411128375011
+  p50: 3.0
+  p90: 32.0
+  p95: 74.0
+  max: 166
+density_modes:
+  sparse:
+    min_objects: 1
+    max_objects: 4
+    image_count: 19246
+    image_fraction: 0.5642168215531647
+    non_empty_fraction: 0.5932250408408594
+    mean_objects: 1.9508988880806402
+    weight: 0.5932250408408594
+  medium:
+    min_objects: 5
+    max_objects: 9
+    image_count: 4603
+    image_fraction: 0.13494180762803787
+    non_empty_fraction: 0.1418796042289554
+    mean_objects: 7.198566152509233
+    weight: 0.1418796042289554
+  dense:
+    min_objects: 10
+    max_objects: 19
+    image_count: 2800
+    image_fraction: 0.08208495793145906
+    non_empty_fraction: 0.08630521221835219
+    mean_objects: 13.791071428571428
+    weight: 0.08630521221835219
+  crowded:
+    min_objects: 20
+    max_objects: 999
+    image_count: 5794
+    image_fraction: 0.16985723080531206
+    non_empty_fraction: 0.17859014271183307
+    mean_objects: 55.55816361753538
+    weight: 0.17859014271183307
+default_sampling:
+  enabled: true
+  allow_empty: false
+  modes:
+    sparse:
+      min_objects: 1
+      max_objects: 4
+      weight: 0.5932250408408594
+    medium:
+      min_objects: 5
+      max_objects: 9
+      weight: 0.1418796042289554
+    dense:
+      min_objects: 10
+      max_objects: 19
+      weight: 0.08630521221835219
+    crowded:
+      min_objects: 20
+      max_objects: 999
+      weight: 0.17859014271183307

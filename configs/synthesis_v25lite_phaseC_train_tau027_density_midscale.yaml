@@ -1,0 +1,154 @@
+# Release override: hard_prior_tau = 0.30 (semantic hard-prior confidence threshold).
+# Earlier tau027 names, comments and run references describe the original 0.27 preset.
+# Phase-C train sweep config with scene-density prior
+# derived from synthesis_v25lite_phaseC_train_tau027.yaml
+# density_prior: configs/density_prior_uav_rgbir_00_train2017.yaml
+# note:
+#   keep Phase-C logic unchanged; only add scene-density-aware target budgeting
+#   crowded range is capped for synthesis stability instead of mirroring 50+ real objects directly
+
+seed: 42
+seed_mode: sweep
+seed_base: 42
+seed_shard: 0
+device: cuda
+amp: true
+
+use_semantic_gate: true
+use_photometric: true
+use_context_place: true
+use_prototype_sampling: true
+use_wavelet_refiner: true
+use_legal_region_sampling: true
+
+switches:
+  use_semantic_gate: true
+  use_photometric: true
+  use_context_place: true
+  use_prototype_sampling: true
+  use_wavelet_refiner: true
+  use_legal_region_sampling: true
+
+proto_k: 1
+proto_bank_path: runs/prototypes/v25lite/20260305_155308/prototypes.npy
+proto_temperature: 0.07
+beta_confuse: 1.0
+alpha_imbalance: 1.0
+proto_candidate_pool: 256
+
+legal_region_probe_trials: 480
+legal_region_pool_size: 160
+
+tau_ctx: 0.55
+hard_prior_tau: 0.30
+score_place_min: 0.58
+max_trials: 62
+day_v_threshold: 112.0
+night_v_threshold: 80.0
+max_l_gap_pre: 140.0
+max_ab_gap_pre: 45.0
+max_l_gap_day: 36.0
+max_ab_gap_day: 30.0
+max_l_gap_night: 48.0
+max_ab_gap_night: 40.0
+max_l_gap_twilight: 42.0
+max_ab_gap_twilight: 35.0
+
+thresholds:
+  tau_ctx: 0.55
+  hard_prior_tau: 0.30
+  score_place_min: 0.58
+  max_trials: 62
+  day_v_threshold: 112.0
+  night_v_threshold: 80.0
+  max_l_gap_pre: 140.0
+  max_ab_gap_pre: 45.0
+  max_l_gap_day: 36.0
+  max_ab_gap_day: 30.0
+  max_l_gap_night: 48.0
+  max_ab_gap_night: 40.0
+  max_l_gap_twilight: 42.0
+  max_ab_gap_twilight: 35.0
+
+patch_bank_root: data/patches/patch_bank
+background_pool_root: data/patches/background_pool
+context_rules_path: configs/context_rules.yaml
+
+generator_ckpt: runs/gen/uav_rgbir/20251226_160415/checkpoints/best.pth
+
+out_root: runs/synth/uav_rgbir/v25lite_phaseC_train_tau027_density_midscale
+append_run_id: true
+
+n_images: 500
+image_ext: jpg
+jpeg_quality: 95
+
+mode: translate
+canvas_w: 640
+canvas_h: 512
+objects_per_image: [1, 8]
+
+scene_density:
+  enabled: true
+  prior_path: configs/density_prior_uav_rgbir_00_train2017.yaml
+  allow_empty: false
+  modes:
+    dense:
+      min_objects: 10
+      max_objects: 16
+    crowded:
+      min_objects: 17
+      max_objects: 24
+  mode_weights:
+    crowded: 0.08
+
+max_iou: 0.10
+max_place_trials: 62
+scale_range: [0.7, 1.4]
+feather: 4
+
+gen_patch_size: 64
+gen_context: 8
+save_preview_every: 200
+
+wavelet_refiner_steps: 2
+wavelet_name: haar
+wavelet_refiner_mode: analytic
+wavelet_refiner_strength: 0.8
+
+constraints:
+  tau_ctx: 0.55
+  hard_prior_tau: 0.30
+  score_place_min: 0.58
+  enable_semantic_gate: true
+  allow_unknown_scene: true
+
+  class_to_context:
+    ship: ["sea", "lake"]
+    car: ["city road", "country road", "bridge"]
+    bus: ["city road", "country road", "bridge"]
+    pedestrian: ["city road", "country road", "bridge", "playground", "airport"]
+    cyclist: ["city road", "country road", "bridge", "playground"]
+    plane: ["airport", "sky"]
+    drone: ["sky", "airport", "city road", "country road", "bridge", "sea", "lake", "playground"]
+
+  enable_photometric: true
+  lab_match_strength: 1.0
+  max_l_gap: 40.0
+  max_ab_gap: 35.0
+  max_l_gap_pre: 140.0
+  max_ab_gap_pre: 45.0
+  day_v_threshold: 112.0
+  night_v_threshold: 80.0
+  max_l_gap_day: 36.0
+  max_ab_gap_day: 30.0
+  max_l_gap_night: 48.0
+  max_ab_gap_night: 40.0
+  max_l_gap_twilight: 42.0
+  max_ab_gap_twilight: 35.0
+
+  enable_context_aware: true
+  max_edge_density: 0.22
+  max_texture: 35.0
+
+  feather: 4
